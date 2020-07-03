@@ -24,10 +24,10 @@ script:
   - python setup.py develop
   - tox
   - |
-    #if [[ "$COVERAGE" == "true" ]]; then
-    #  pre-commit install
-    #  pre-commit run --all-files
-    #fi
+    if [[ "$COVERAGE" == "true" ]]; then
+      pre-commit install
+      pre-commit run --all-files
+    fi
 after_success:
   - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
 after_script:
