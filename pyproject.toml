@@ -5,7 +5,7 @@ description = ""
 authors = ["Andy Miles <me@andykmiles.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "3.8.3"
 flask = "*"
 
 [tool.poetry.dev-dependencies]
