@@ -9,17 +9,6 @@ elevator
 ========
 
 
-Add a short description here!
+This project is a fully Dockerized development environment. It inlcudes a runnig instance of mongodb (and maybe soon Redis and neo4j).
 
 
-Description
-===========
-
-A longer description of your project goes here...
-
-
-Note
-====
-
-This project has been set up using PyScaffold 3.2.3. For details and usage
-information on PyScaffold see https://pyscaffold.org/.
