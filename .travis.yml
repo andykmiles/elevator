@@ -1,7 +1,3 @@
-# Travis configuration file using the build matrix feature
-# Read more under http://docs.travis-ci.com/user/build-configuration/
-# THIS SCRIPT IS SUPPOSED TO BE AN EXAMPLE. MODIFY IT ACCORDING TO YOUR NEEDS!
-
 sudo: false
 language: python
 virtualenv:
@@ -9,30 +5,34 @@ virtualenv:
 matrix:
   fast_finish: true
   include:
-    - python: 3.8.3
-      env: DISTRIB="ubuntu" TOX_PYTHON_VERSION="py383" COVERAGE="true"
+  - python: 3.8.3
+    env: DISTRIB="ubuntu" TOX_PYTHON_VERSION="py383" COVERAGE="true"
 install:
-  - source tests/travis_install.sh
-  - pip install -r requirements.txt
-  # ^  DEPRECATION WARNING:
-  # The automatic creation of a `requirements.txt` file is deprecated.
-  # See `Dependency Management` in the docs for other options.
+- source tests/travis_install.sh
+- pip install -r requirements.txt
 before_script:
-  - git config --global user.email "me@andykmiles.com"
-  - git config --global user.name "Andy Miles"
+- git config --global user.email "me@andykmiles.com"
+- git config --global user.name "Andy Miles"
 script:
-  - python setup.py develop
-  - tox
-  - |
-    if [[ "$COVERAGE" == "true" ]]; then
-      pre-commit install
-      pre-commit run --all-files
-    fi
+- python setup.py develop
+- tox
+- |
+  if [[ "$COVERAGE" == "true" ]]; then
+    pre-commit install
+    pre-commit run --all-files
+  fi
 after_success:
-  - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
+- if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
 after_script:
-  - travis-cleanup
+- travis-cleanup
 cache:
   pip: true
   directories:
-    - $HOME/miniconda
+  - "$HOME/miniconda"
+deploy:
+  provider: bintray
+    file: "bintray.json"
+    user: "andykmiles"
+    key:
+      secure: mdi74yS9XJPNy1au6Sg2YhPzdRuoy8JbydDVU2sF1rBiMFRElz4ft2ztqDGFnSpg6nmCJYvJmMF7qKMo8uzWPAtB9WqLt9kybK6RdBrcEo9mpNrWDTigrxcX1qxCpV8Tz2PjAk2JBSib+VsBFv+o3fm2hHJl1gPmRm+cFhrD2Jj0rKhyVdB4ixKBUqIGhOSrVj8BjmHkGxVZfs5G01TaPa8rfVJuE3DQ4bJ1eGTaiy8wFEZig69vFvS/xJT1l/TdJyHuK/8F4ngRbQ5SpDefiFYHpmfdcWe7DHnBCIJXa8uvFth26XpNpuz7A8fBjrNdTzf0xvGTBUtfQcm04ZvZbeNPfMgJF/JvuVE1K1OmUp/0fRXyqIPH0vPuS/O+HWvP0edG/Umw3g6fbmiwq+TEoQT+bPKVC/aqDKMfltZTvfuYLKnlOv1a6txnnwKMIVb/LY5HQYVNtuQmvTplLzwzawBGXWo4PaKvcCWmt6m2frzkpk99jpqtHNcP+QplBI3hB5t/JXyM7Cj9lkp5ChXmXV6tJcwJ8UFtamXxnlNkdD8bNnSvFHYR3o3lSVZvA7f3uU45TIkWzHSXNBxtk72FOvH0mE/VECechOtMlEenUtlWve0we6SDnZ1Xg4axK/SbBri6Q6mGSl54ViqHLo1OF0tFcv6EREKlDaSMt0xa//c=
+    skip_cleanup: true # to upload artifacts created during the build
