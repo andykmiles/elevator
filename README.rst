@@ -9,6 +9,4 @@ elevator
 ========
 
 
-This project is a fully Dockerized development environment. It inlcudes a runnig instance of mongodb (and maybe soon Redis and neo4j).
-
-
+This project is a fully Dockerized development environment. It inlcudes a running instance of mongodb (and maybe soon Redis and neo4j).
