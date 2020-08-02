@@ -1,4 +1,3 @@
-
 from pymongo import MongoClient
 
 
@@ -17,4 +16,3 @@ class MongoDBConnection:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.connection.close()
-
