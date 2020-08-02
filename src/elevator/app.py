@@ -1,22 +1,4 @@
-
-from pymongo import MongoClient
-
-
-class MongoDBConnection:
-    """MongoDB Connection"""
-
-    def __init__(self, host="127.0.0.1", port=27017):
-        """ be sure to use the ip address not name for local windows"""
-        self.host = host
-        self.port = port
-        self.connection = None
-
-    def __enter__(self):
-        self.connection = MongoClient(self.host, self.port)
-        return self
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.connection.close()
+from dbs.connect import MongoDBConnection
 
 
 def print_mdb_collection(collection_name):
@@ -33,10 +15,6 @@ def main():
 
         # collection in database
         cd = db["cd"]
-
-        # notice how easy these are to create and that they are "schemaless"
-        # that is, the Python module defines the data structure in a dict,
-        # rather than the database which just stores what it is told
 
         cd_ip = {"artist": "The Who", "Title": "By Numbers"}
         result = cd.insert_one(cd_ip)
