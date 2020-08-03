@@ -32,11 +32,11 @@
         {
             "includePattern": "src(.*)*/(.*\\.py)",
             "excludePattern": ".*/do-not-deploy/.*",
-            "uploadPattern": "py/$2"
+            "uploadPattern": "py"
         },
         {
-            "includePattern": "build/docs/(.*)",
-            "uploadPattern": "docs/$1"
+            "includePattern": "docs/(.*)",
+            "uploadPattern": "docs"
         }
     ],
     "publish": true
