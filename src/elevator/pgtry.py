@@ -21,9 +21,11 @@ cur = conn.cursor()
 
 # A sample query of all data from the "vendors" table in the "suppliers" database
 cur.execute("""create table test (id int);""")
+cur.execute("""insert into test (id) values(1);""")
 cur.execute("""select count(*) from test;""")
 query_results = cur.fetchall()
 print(query_results)
+
 
 # Close the cursor and connection to so the server can allocate
 # bandwidth to other requests
