@@ -90,9 +90,13 @@ RUN chown -R vscode /var/lib/redis
 RUN chown -R vscode /var/log/
 
 # neo4j
-
+VOLUME ../conf/neo4j/neo4j.conf /opt/neo4j-community-4.1.1/conf/neo4j.conf
 RUN apt-get update && apt-get install -y openjdk-11-jdk-headless
 WORKDIR /opt
 RUN wget http://dist.neo4j.org/neo4j-community-4.1.1-unix.tar.gz
 RUN tar -xzvf neo4j-community-4.1.1-unix.tar.gz
 RUN rm neo4j-community-4.1.1-unix.tar.gz
+
+# pgsql
+VOLUME ../conf/pgsql/postgresql.conf /etc/postgresql/11/main/postgresql.conf
+RUN apt-get update && apt-get install -y postgresql
