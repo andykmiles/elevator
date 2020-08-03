@@ -1,6 +1,6 @@
 {
     "package": {
-        "name": "auto-upload",
+        "name": "auto-elavator_app",
         "repo": "elevator",
         "subject": "elevator sim",
         "desc": "auto deployed from travis",
