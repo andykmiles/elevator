@@ -28,6 +28,8 @@ after_script:
 cache:
   pip: true
 
+before_deploy: "docker build -f build/Dockerfile -t elevator"
+
 deploy:
   provider: bintray
   file: "./bintray.json"
