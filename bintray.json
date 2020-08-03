@@ -1,10 +1,10 @@
 {
     "package": {
-        "name": "auto-elavator_app",
+        "name": "elevator_app",
         "repo": "elevator",
         "subject": "elevator sim",
         "desc": "auto deployed from travis",
-        "website_url": "www.jfrog.com",
+        "website_url": "andykmiles.com",
         "issue_tracker_url": "https://github.com/andykmiles/elevator/issues",
         "vcs_url": "https://github.com/andykmiles/elevator",
         "github_use_tag_release_notes": true,
