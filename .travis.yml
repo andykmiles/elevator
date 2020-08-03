@@ -5,7 +5,7 @@ virtualenv:
 matrix:
   fast_finish: true
   include:
-  - python: 3.8.3
+  - python: 3.8.5
     env: DISTRIB="ubuntu" TOX_PYTHON_VERSION="py383" COVERAGE="true"
 install:
 - source tests/travis_install.sh
@@ -27,8 +27,7 @@ after_script:
 - travis-cleanup
 cache:
   pip: true
-  directories:
-  - "$HOME/miniconda"
+
 #deploy:
 #  provider: bintray
 #  file: "bintray.json"
