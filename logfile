@@ -1,0 +1,5 @@
+2020-08-03 18:16:23.858 UTC [6429] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-08-03 18:16:23.858 UTC [6429] LOG:  could not bind IPv6 address "::1": Cannot assign requested address
+2020-08-03 18:16:23.858 UTC [6429] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2020-08-03 18:16:23.861 UTC [6429] FATAL:  could not create lock file "/var/run/postgresql/.s.PGSQL.5432.lock": Permission denied
+2020-08-03 18:16:23.861 UTC [6429] LOG:  database system is shut down
