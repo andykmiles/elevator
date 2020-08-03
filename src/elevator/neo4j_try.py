@@ -26,5 +26,5 @@ class HelloWorldExample(object):
         return result.single()[0]
 
 
-hw = HelloWorldExample("neo4j://localhost:7687", "neo4j", "neo4j")
+hw = HelloWorldExample("neo4j://localhost:7687", "neo4j", "andy")
 hw.print_greeting("Hi andy")
