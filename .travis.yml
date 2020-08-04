@@ -35,7 +35,7 @@ cache:
   pip: true
 
 env:
-  - BINTRAY_PW="secrethub://andykmiles/apps/bintray/pw"
+  - export BINTRAY_PW=secrethub://andykmiles/apps/bintray/pw
 
 script:
   - secrethub run -- ./bin/build.sh
