@@ -30,11 +30,9 @@ script:
   fi
 after_success:
 - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
-after_script:
-- travis-cleanup
+
 cache:
   pip: true
-
 
 env:
   - BINTRAY_PW="secrethub://andykmiles/apps/bintray/pw"
@@ -46,3 +44,5 @@ script:
 #  skip_cleanup: true
 #  provider: script
 #  script: bin/build.sh
+after_script:
+- travis-cleanup
