@@ -29,5 +29,6 @@ cache:
   pip: true
 
 deploy:
+  skip_cleanup: true
   provider: script
   script: bin/build.sh
