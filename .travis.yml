@@ -44,5 +44,5 @@ script:
 #  skip_cleanup: true
 #  provider: script
 #  script: bin/build.sh
-after_script:
-- travis-cleanup
+#after_script:
+#- travis-cleanup
