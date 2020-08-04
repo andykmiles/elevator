@@ -28,16 +28,5 @@
         "attributes": [],
         "gpgSign": false
     },
-    "files": [
-        {
-            "includePattern": "src(.*)*/(.*\\.py)",
-            "excludePattern": ".*/do-not-deploy/.*",
-            "uploadPattern": "py"
-        },
-        {
-            "includePattern": "docs/(.*)",
-            "uploadPattern": "docs"
-        }
-    ],
     "publish": true
 }

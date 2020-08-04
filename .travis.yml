@@ -28,7 +28,7 @@ after_script:
 cache:
   pip: true
 
-before_deploy: "docker build -f build/Dockerfile -t elevator"
+before_deploy: "docker build . -t deploy/test -f deploy.Dockerfile"
 
 deploy:
   provider: bintray
@@ -37,3 +37,5 @@ deploy:
   key:
      secure: mdi74yS9XJPNy1au6Sg2YhPzdRuoy8JbydDVU2sF1rBiMFRElz4ft2ztqDGFnSpg6nmCJYvJmMF7qKMo8uzWPAtB9WqLt9kybK6RdBrcEo9mpNrWDTigrxcX1qxCpV8Tz2PjAk2JBSib+VsBFv+o3fm2hHJl1gPmRm+cFhrD2Jj0rKhyVdB4ixKBUqIGhOSrVj8BjmHkGxVZfs5G01TaPa8rfVJuE3DQ4bJ1eGTaiy8wFEZig69vFvS/xJT1l/TdJyHuK/8F4ngRbQ5SpDefiFYHpmfdcWe7DHnBCIJXa8uvFth26XpNpuz7A8fBjrNdTzf0xvGTBUtfQcm04ZvZbeNPfMgJF/JvuVE1K1OmUp/0fRXyqIPH0vPuS/O+HWvP0edG/Umw3g6fbmiwq+TEoQT+bPKVC/aqDKMfltZTvfuYLKnlOv1a6txnnwKMIVb/LY5HQYVNtuQmvTplLzwzawBGXWo4PaKvcCWmt6m2frzkpk99jpqtHNcP+QplBI3hB5t/JXyM7Cj9lkp5ChXmXV6tJcwJ8UFtamXxnlNkdD8bNnSvFHYR3o3lSVZvA7f3uU45TIkWzHSXNBxtk72FOvH0mE/VECechOtMlEenUtlWve0we6SDnZ1Xg4axK/SbBri6Q6mGSl54ViqHLo1OF0tFcv6EREKlDaSMt0xa//c=
   skip_cleanup: true # to upload artifacts created during the build
+  script: docker tag deploy/test:latest andykmiles-docker-elevator.bintray.io/elevator_app:latest
+  script: docker push andykmiles-docker-elevator.bintray.io/elevator_app:lates

@@ -1,3 +1,3 @@
 FROM python:3
-COPY src/ build/
-CMD [ "python", "./built.py" ]
+ADD src/. /app
+CMD [ "python", "/app/built.py" ]
