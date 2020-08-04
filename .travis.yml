@@ -7,6 +7,13 @@ matrix:
   include:
   - python: 3.8.5
     env: DISTRIB="ubuntu" TOX_PYTHON_VERSION="py383" COVERAGE="true"
+
+
+before_install:
+  - echo "deb [trusted=yes] https://apt.secrethub.io stable main" | sudo tee /etc/apt/sources.list.d/secrethub.sources.list
+  - sudo apt-get update && sudo apt-get install -y secrethub-cli
+
+
 install:
 - source tests/travis_install.sh
 - pip install -r requirements.txt
@@ -28,7 +35,14 @@ after_script:
 cache:
   pip: true
 
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: bin/build.sh
+
+env:
+  - BINTRAY_PW="secrethub://andykmiles/apps/bintray/pw"
+
+script:
+  - secrethub run -- ./bin/build.sh
+
+#deploy:
+#  skip_cleanup: true
+#  provider: script
+#  script: bin/build.sh
