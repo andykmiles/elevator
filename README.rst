@@ -2,11 +2,9 @@
    :target: https://github.com/pre-commit/pre-commit
    :alt: pre-commit
    
-https://api.shippable.com/projects/5f26fdc2fad1100007007f99/badge?branch=master
-
 ========
 elevator
 ========
 
 
-This project is a fully Dockerized development environment. It inlcudes a running instance of mongodb (and maybe soon Redis and neo4j).
+This project is a fully Dockerized development environment. It inlcudes a running instance of mongodb,Redis,neo4j and postgres).
