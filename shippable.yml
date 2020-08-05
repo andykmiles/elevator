@@ -13,7 +13,7 @@ build:
 integrations:
   hub:
     - integrationName: elevator
-      type: dockerRegistryLogin
+    - type: dockerRegistryLogin
 build:
   post_ci:
     - docker build . -t elevator_app -f deploy.Dockerfile
