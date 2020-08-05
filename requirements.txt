@@ -7,3 +7,4 @@ pytest-bdd
 tox
 pytest-mock
 pymongo
+pre-commit
