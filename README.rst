@@ -2,7 +2,7 @@
    :target: https://github.com/pre-commit/pre-commit
    :alt: pre-commit
    
- [![Run Status](https://api.shippable.com/projects/5f26fdc2fad1100007007f99/badge?branch=master)]()
+https://api.shippable.com/projects/5f26fdc2fad1100007007f99/badge?branch=master
 
 ========
 elevator
