@@ -1,9 +1,7 @@
 language: python
-python:
-  - 3.7
 build:
   pre_ci_boot:
-    image_name: python:3.8
+    image_name: python
     image_tag: latest
     pull: true
   ci:
