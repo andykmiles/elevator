@@ -6,7 +6,6 @@ python:
 build:
   ci:
     - "pip install -r requirements.txt"
-
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - pytest --junitxml=shippable/testresults/nosetests.xml
