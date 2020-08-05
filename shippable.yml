@@ -2,11 +2,15 @@ language: python
 python:
   - 3.7
 build:
+  pre_ci_boot:
+    image_name: python:3.8
+    image_tag: latest
+    pull: true
   ci:
     - pip install -r requirements.txt
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
-    - pytest
+    - pytest -vv --cov-report=xml:shippable/codecoverage/coverage.xml
   post_ci:
     - docker build . -t elevator_app -f deploy.Dockerfile
     - docker tag elevator_app:latest andykmiles-docker-elevator.bintray.io/elevator_app:latest
