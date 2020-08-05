@@ -6,7 +6,7 @@ build:
     - pip install -r requirements.txt
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
-    - pytest -vv --cov-report=xml:shippable/codecoverage/coverage.xml
+    - pytest
   post_ci:
     - docker build . -t elevator_app -f deploy.Dockerfile
     - docker tag elevator_app:latest andykmiles-docker-elevator.bintray.io/elevator_app:latest
