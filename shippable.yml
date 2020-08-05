@@ -1,15 +1,12 @@
 language: python
-
 python:
   - 3.8
-
 build:
   ci:
     - "pip install -r requirements.txt"
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - pytest -vv --cov=src --cov-report=xml:shippable/codecoverage/coverage.xml
-
 integrations:
   hub:
     - integrationName: elevator
