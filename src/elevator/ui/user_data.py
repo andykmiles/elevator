@@ -1,4 +1,8 @@
 def collect_parameters():
+    print("collecting...")
+
+    return True
+    """
     values = {}
     values["number_of_floors"] = input("Number of floors : ")
     values["morning_peak_start"] = input("Morning peak starts hh:mm : ")
@@ -8,3 +12,4 @@ def collect_parameters():
     values["afternoon_peak_start"] = input("Afternoon peak starts hh:mm : ")
     values["afternoon_peak_end"] = input("Afternoon peak ends hh:mm : ")
     return values
+    """
