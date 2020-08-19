@@ -1,6 +1,8 @@
 def collect_parameters():
     print("collecting...")
 
+    print("hello class")
+
     return True
     """
     values = {}
