@@ -3,6 +3,8 @@ def collect_parameters():
 
     print("hello class")
 
+    print("again")
+
     return True
     """
     values = {}
