@@ -7,7 +7,7 @@ def main():
     print("Calculate elevator requirements with a simple set of parameters\n")
     simulation_values = elevator.ui.user_data.collect_parameters()
     print(simulation_values)
-    print("new line")
+    print("another new line")
 
 
 if __name__ == "__main__":
